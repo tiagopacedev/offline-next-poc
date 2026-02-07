@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 const APP_NAME = "NJS App";
 const APP_DESCRIPTION = "Next.js + Serwist PWA";
@@ -32,17 +35,22 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" dir="ltr">
+    <html lang="en" dir="ltr" className={inter.className}>
       <head>
         <style>{`
-            html, body, #__next {
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+            html, body {
               height: 100%;
+              background-color: #fafafa;
             }
-            #__next {
-              margin: 0 auto;
-            }
-            h1 {
-              text-align: center;
+            body {
+              font-family: 'Inter', system-ui, -apple-system, sans-serif;
+              line-height: 1.5;
+              color: #333;
             }
             `}</style>
       </head>
