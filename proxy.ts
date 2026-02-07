@@ -7,7 +7,7 @@ const mockUsers = [
   { id: '2', email: 'jane@example.com', name: 'Jane Smith' }
 ];
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
   // Get auth token from cookies or headers
