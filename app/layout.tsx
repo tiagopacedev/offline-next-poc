@@ -9,19 +9,13 @@ const APP_DESCRIPTION = "Next.js + Serwist PWA";
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
-  title: {
-    default: APP_NAME,
-    template: "%s - NJS App",
-  },
+  title: APP_NAME,
   description: APP_DESCRIPTION,
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
     title: APP_NAME,
-  },
-  formatDetection: {
-    telephone: false,
   },
   icons: {
     shortcut: "/favicon.ico",
@@ -30,7 +24,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FFFFFF",
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
